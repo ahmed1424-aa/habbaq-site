@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+:root{--bg:#100c10;--ink:#f8f2ed;--muted:#aaa0a2;--wine:#782d42;--wine2:#3e1825;--gold:#d8b575;--green:#9ba879;--line:#ffffff1b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Alexandria',sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.27'/%3E%3C/svg%3E")}
+.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 7.2%;border-bottom:1px solid #ffffff12;position:absolute;z-index:5;width:100%;top:0}
+.logo-filter-defs{position:absolute;width:0;height:0;overflow:hidden}
+.topbar-wordmark{gap:8px;letter-spacing:0}
+.topbar-wordmark .brand-logo{display:block;width:108px;height:auto;max-height:50px;object-fit:contain;filter:url(#brand-logo-cutout)}
+.wordmark{font-weight:700;font-size:22px;letter-spacing:-1px;display:flex;align-items:center;gap:8px}
+.leaf{color:var(--gold);font-size:25px;line-height:1}
+nav{display:flex;gap:38px;font-size:11px;color:#b7aeb0}
+nav a{transition:color .2s}
+nav a:hover,nav .active{color:#fff}
+.header-cta{font-size:10px;border:1px solid #ffffff35;border-radius:50px;padding:12px 18px;transition:.25s}
+.header-cta:hover{background:#fff;color:#24171b}
+.header-cta span{color:var(--gold);margin-right:10px;font-size:15px}
+.menu-toggle{display:none}
+.hero{min-height:730px;height:min(850px,100svh);position:relative;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:5%;padding:112px 13.5% 76px;overflow:hidden;background:radial-gradient(ellipse 42% 65% at 26% 50%,#61283a62,transparent 78%),linear-gradient(115deg,#120d12,#171016 55%,#100c10)}
+.glow{position:absolute;width:420px;height:420px;border-radius:50%;background:#a04e5830;filter:blur(100px);left:10%;top:24%;pointer-events:none}
+.hero-copy{grid-column:1;grid-row:1;position:relative;z-index:2}
+.eyebrow{display:flex;align-items:center;gap:9px;color:#c2b5b1;font-size:10px;letter-spacing:.2px}
+.eyebrow b{color:#78666a}
+.pulse{display:inline-block;width:7px;height:7px;border-radius:100%;background:var(--gold);box-shadow:0 0 12px #d8b5758a}
+.hero-copy h1{font-family:'29LT Massira','Alexandria',sans-serif;font-size:clamp(54px,6.3vw,88px);line-height:1.27;letter-spacing:0;font-weight:400;margin:30px 0 20px}
+.hero-copy h1 em,.section-head h2 em,.story h2 em{font-style:normal;color:var(--gold)}
+.intro{color:#b8adae;font-size:13px;line-height:2.15;margin:0 0 27px}
+.primary-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;min-width:174px;padding:6px 7px 6px 17px;border-radius:40px;background:var(--gold);color:#201617;font-weight:600;font-size:10px;transition:transform .25s,box-shadow .25s}
+.primary-cta:hover{transform:translateY(-3px);box-shadow:0 7px 30px #d8b57535}
+.primary-cta b{display:grid;place-items:center;background:#211618;color:var(--gold);width:34px;height:34px;border-radius:50%;font-size:16px}
+.location{display:flex;align-items:center;gap:9px;margin-top:39px;color:#96898c;font-size:9px}
+.location span:first-child{font-size:17px;color:var(--gold)}
+.hero-photo{grid-column:2;grid-row:1;position:relative;margin:0;padding:10px;background:#f5f2ec;transform:rotate(2deg);box-shadow:0 26px 85px #0009;z-index:1}
+.hero-photo img{display:block;width:100%;aspect-ratio:1.18;object-fit:cover}
+.hero-photo figcaption{display:flex;justify-content:space-between;align-items:center;padding:12px 8px 5px;color:#2e2225;font-size:10px;font-weight:600}
+.hero-photo figcaption span+span{font:9px 'DM Mono',monospace;color:#817678}
+
+
+.hero-bottom{position:absolute;bottom:26px;left:7.2%;right:7.2%;display:flex;justify-content:space-between;color:#94888a;font-size:9px}
+.hero-bottom b{color:var(--gold);font-size:14px;margin-right:8px}
+.index{direction:ltr;font:10px 'DM Mono',monospace}
+.index i{display:inline-block;width:38px;height:1px;background:#65565c;vertical-align:middle;margin:0 8px}
+.menu-section{padding:105px 13.5% 100px;background:linear-gradient(180deg,#100c10,#151015)}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:38px}
+.section-head h2{font-size:39px;letter-spacing:-2px;margin:14px 0 0}
+.section-head p{font-size:11px;color:#a99fa0;line-height:2;margin:0}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.menu-card{min-width:0}
+.menu-card figure{position:relative;margin:0;background:#f2f0eb;padding:8px;overflow:hidden}
+.menu-card figure img{display:block;width:100%;aspect-ratio:1.48;object-fit:cover;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+.menu-card:hover figure img{transform:scale(1.035)}
+.item-number{position:absolute;top:20px;right:20px;background:#100c10d9;color:#f9f2e9;padding:8px 11px;font:8px 'DM Mono',sans-serif}
+.item-details{display:flex;align-items:center;justify-content:space-between;padding:20px 2px 0}
+.item-type{font-size:9px;color:var(--gold)}
+.item-details h3{font-size:22px;margin:8px 0 7px;font-weight:600}
+.item-details p{max-width:360px;font-size:10px;line-height:1.9;color:#a99fa0;margin:0}
+.item-mark{font-size:21px;color:var(--green);margin-right:15px}
+.menu-note{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:50px;color:#94898b;font-size:10px}
+.menu-note span{width:32px;height:1px;background:#725d60}
+.story{padding:90px 13.5%;display:grid;grid-template-columns:70px 1.1fr 1fr 44px;align-items:center;gap:22px;background:radial-gradient(ellipse at 23% 50%,#57243727,transparent 53%)}
+.story-mark{font-size:48px;color:var(--gold)}
+.story h2{font-family:'29LT Massira','Alexandria',sans-serif;font-size:43px;line-height:1.35;letter-spacing:0;font-weight:400;margin:15px 0 0}
+.story p{font-size:11px;line-height:2.1;color:#aaa0a1;max-width:300px}
+.story>a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid #ffffff30;font-size:19px}
+.story>a:hover{background:var(--gold);color:#111;border-color:var(--gold)}
+footer{min-height:78px;padding:18px 7.2%;border-top:1px solid #ffffff12;display:flex;align-items:center;justify-content:space-between;color:#918789;font-size:9px}
+footer .wordmark{font-size:17px;color:#fff}
+footer .leaf{font-size:20px}
+@font-face{font-family:'29LT Massira';src:local('29LT Massira Pen'),local('29LT Massira');font-style:normal;font-weight:400;font-display:swap}
+@media(max-width:900px){.topbar{padding:0 5%}.hero{padding:112px 8% 70px;gap:4%;grid-template-columns:1fr 1fr}.menu-section,.story{padding-left:8%;padding-right:8%}.story{grid-template-columns:54px 1fr 1fr 42px}.story-mark{font-size:40px}}
+@media(max-width:650px){.topbar{height:66px}.topbar nav,.header-cta{display:none}.menu-toggle{display:flex;flex-direction:column;gap:5px;border:0;background:none;padding:10px}.menu-toggle i{width:21px;height:1px;background:white}.topbar.open nav{position:absolute;display:flex;flex-direction:column;top:65px;left:0;right:0;padding:20px 6%;background:#181116;border-bottom:1px solid #ffffff18;gap:17px}.hero{height:auto;min-height:830px;max-height:none;display:flex;flex-direction:column-reverse;justify-content:center;align-items:stretch;padding:90px 8% 76px;gap:33px}.hero-photo{width:min(100%,420px);align-self:center;transform:rotate(1deg)}.hero-photo img{aspect-ratio:1.3}.hero-copy{align-self:flex-start}.hero-copy h1{font-size:56px;line-height:1.35;margin:17px 0}.intro{font-size:11px;margin-bottom:20px}.location{margin-top:24px}.hero-bottom{bottom:20px;left:8%;right:8%}.menu-section{padding:70px 7%}.section-head{align-items:flex-start;gap:13px;flex-direction:column;margin-bottom:24px}.section-head h2{font-size:32px}.section-head p br{display:none}.menu-grid{grid-template-columns:1fr;gap:32px}.menu-card figure img{aspect-ratio:1.42}.item-details h3{font-size:20px}.menu-note{margin-top:37px}.story{padding:64px 8%;grid-template-columns:42px 1fr 38px;gap:12px}.story-mark{font-size:34px;align-self:start}.story h2{font-size:34px}.story p{grid-column:2;grid-row:2;margin:0;font-size:10px}.story>a{grid-column:3;grid-row:1}.story .eyebrow{font-size:9px}footer{padding:18px 6%;gap:12px}footer>span:nth-child(2){display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+/* Transparent product cutouts, displayed directly on the site surface. */
+.hero-photo{background:transparent;padding:0;box-shadow:none;transform:none}
+.hero-photo img{object-fit:contain;filter:drop-shadow(0 24px 22px #0008)}
+.hero-photo figcaption{color:#eee5df;padding-right:16px;padding-left:16px}
+.hero-photo figcaption span+span{color:var(--gold)}
+.menu-card figure{aspect-ratio:1.48;min-height:300px;display:grid;place-items:center;padding:0;background:transparent;overflow:hidden}
+.menu-card figure img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain;filter:drop-shadow(0 18px 25px #0008)}
+.menu-card:hover figure img{transform:scale(1.04)}
+.item-number{top:15px;right:15px}
+@media(max-width:650px){.menu-card figure{min-height:230px}.hero-photo img{max-height:340px}.hero-photo figcaption{padding-top:5px}}
+/* Keep transparent product cutouts fully visible at their natural proportions. */
+.hero-photo{overflow:visible}
+.hero-photo img{width:min(100%,420px);height:auto;max-height:460px;aspect-ratio:auto;object-fit:contain}
+.menu-card figure{height:auto;min-height:0;aspect-ratio:auto;overflow:visible}
+.menu-card figure img{width:min(100%,620px);height:auto;max-height:390px;aspect-ratio:auto;object-fit:contain}
+@media(max-width:650px){.hero-photo img{width:100%;max-height:360px;aspect-ratio:auto}.menu-card figure{min-height:0;aspect-ratio:auto}.menu-card figure img{width:min(100%,520px);max-height:370px;aspect-ratio:auto}}
+/* Align both menu items on a shared image and text grid. */
+.menu-grid{align-items:start}
+.menu-card figure{height:360px;min-height:0;aspect-ratio:auto;display:grid;place-items:center;overflow:visible}
+.menu-card figure img{width:100%;height:100%;max-height:none;object-fit:contain}
+.item-details{min-height:132px;align-items:flex-start;padding-top:20px}
+.item-details>div{flex:1}
+.item-mark{flex:0 0 auto;margin-top:20px}
+@media(max-width:650px){.menu-card figure{height:300px;min-height:0}.menu-card figure img{height:100%;max-height:none}.item-details{min-height:0;padding-top:16px}}
+/* Interactive 360 product view */
+.product-viewer{position:relative;touch-action:pan-y;user-select:none;cursor:grab}
+.product-viewer.dragging{cursor:grabbing}
+.product-viewer img{transform:perspective(1100px) rotateY(var(--product-angle,0deg));transform-style:preserve-3d;backface-visibility:visible;transition:transform .08s linear;will-change:transform}
+.menu-card:hover .product-viewer img{transform:perspective(1100px) rotateY(var(--product-angle,0deg)) scale(1.035)}
+.product-viewer.dragging img{transition:none}
+.spin-trigger{position:absolute;z-index:2;top:14px;left:14px;width:43px;height:43px;border:1px solid #ffffff70;border-radius:50%;background:#100c10c9;color:var(--gold);font:9px 'DM Mono',monospace;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.spin-trigger:hover{background:var(--gold);color:#211618;transform:rotate(-20deg)}
+.drag-hint{position:absolute;z-index:1;bottom:12px;right:50%;transform:translateX(50%);padding:7px 12px;border-radius:20px;background:#100c10b8;color:#f1e9df;font-size:8px;white-space:nowrap;pointer-events:none;opacity:.8}
+.product-viewer.spinning img{animation:product-360 1.8s cubic-bezier(.37,0,.63,1) both}
+@keyframes product-360{from{transform:perspective(1100px) rotateY(var(--product-angle,0deg))}to{transform:perspective(1100px) rotateY(calc(var(--product-angle,0deg) + 360deg))}}
+/* Three featured menu items: tea, karak, and focaccia. */
+.menu-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.item-details h3{font-size:18px}
+.item-details p{max-width:none}
+@media(max-width:900px){.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.menu-grid{grid-template-columns:1fr}}
+/* Balance the tall glass against the cup and plated focaccia. */
+.karak-card .product-viewer img{width:66%;height:66%}
+@media(max-width:650px){.karak-card .product-viewer img{width:100%;height:100%}}
+/* Four menu items arranged in a balanced two-column grid. */
+.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 24px}
+.karak-card .product-viewer img{width:85%;height:85%}
+@media(max-width:650px){.menu-grid{grid-template-columns:1fr}.karak-card .product-viewer img{width:100%;height:100%}}
+/* Keep the taller karak glass visually aligned with the other products. */
+.karak-card .product-viewer img{width:56%;height:56%}
+/* Final visual size balance: keep the karak glass close to the tea cup. */
+.karak-card .product-viewer img{width:75%;height:75%}
+/* Match the visible plate size across both baked items. */
+.sparilla-card .product-viewer img{width:82%;height:82%}
+/* Center and scale both baked plates by their visible artwork, not source canvas. */
+.food-card .product-viewer img{width:80%;height:80%;object-fit:contain;object-position:center;transform-origin:center center}
+.sparilla-card .product-viewer img{width:68%;height:68%;object-fit:contain;object-position:center;transform-origin:center center}
+/* Slightly reduce both cup products while keeping them centered. */
+.tea-card .product-viewer img{width:84%;height:84%}
+.karak-card .product-viewer img{width:68%;height:68%}
+/* Harmonize both drink cutouts at a smaller shared visual height. */
+.tea-card .product-viewer img,.karak-card .product-viewer img{width:62%;height:62%}
+/* Smaller, still-matched drink product scale. */
+.tea-card .product-viewer img,.karak-card .product-viewer img{width:48%;height:48%}
+/* Blend the transparent Habbaq facade illustration into the hero backdrop. */
+.hero-photo img{mix-blend-mode:screen;filter:drop-shadow(0 10px 24px #d8b57518);opacity:.96}
+.hero-photo figcaption{color:#f1e4c9}
+.hero-photo figcaption span+span{color:#c5a66d}
+/* Larger hero artwork, matched to its burgundy canvas so the panel disappears. */
+.hero{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:2%;background:#931b24}
+.hero-photo{width:100%;align-self:center;overflow:visible;transform:none}
+.hero-photo img{display:block;width:auto;height:min(620px,72svh);max-width:100%;max-height:620px;aspect-ratio:auto;object-fit:contain;mix-blend-mode:normal;filter:none;opacity:1}
+@media(max-width:900px){.hero{grid-template-columns:1fr 1fr;gap:2%;background:#931b24}.hero-photo img{height:min(560px,66svh)}}
+@media(max-width:650px){.hero{background:#931b24}.hero-photo{width:min(100%,500px);transform:none}.hero-photo img{width:auto;height:min(490px,60svh);max-width:100%;max-height:490px}}
+/* Restore the dark hero and blend only the transparent line illustration. */
+.hero{background:radial-gradient(ellipse 42% 65% at 26% 50%,#61283a62,transparent 78%),linear-gradient(115deg,#120d12,#171016 55%,#100c10)}
+.hero-photo img{mix-blend-mode:screen;filter:drop-shadow(0 10px 24px #d8b57518);opacity:.96}
+/* Full-bleed illustration behind all hero copy. */
+.hero{position:relative;background:radial-gradient(ellipse 42% 65% at 26% 50%,#61283a62,transparent 78%),linear-gradient(115deg,#120d12,#171016 55%,#100c10)}
+.hero-photo{position:absolute;inset:0;grid-column:auto;grid-row:auto;z-index:1;width:100%;height:100%;margin:0;padding:0;pointer-events:none;background:transparent;overflow:hidden}
+.hero-photo img{display:block;width:100%;height:100%;max-width:none;max-height:none;aspect-ratio:auto;object-fit:cover;object-position:center center;mix-blend-mode:screen;filter:none;opacity:.26}
+.hero-photo figcaption{display:none}
+.hero-copy{z-index:3}
+.hero-bottom{z-index:3}
+@media(max-width:650px){.hero-photo{inset:0;width:100%;height:100%}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;opacity:.2}}
+/* Relocate the tall tree toward the arrow-marked spot while keeping the facade art full-bleed. */
+.hero-photo .hero-art{-webkit-mask-image:linear-gradient(to right,#000 0%,#000 75%,transparent 86%);mask-image:linear-gradient(to right,#000 0%,#000 75%,transparent 86%)}
+.hero-photo .tree-return{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center center;transform:translateX(-16%);mix-blend-mode:screen;filter:none;opacity:.26;-webkit-mask-image:radial-gradient(ellipse 13% 16% at 90% 19%,#000 48%,transparent 100%);mask-image:radial-gradient(ellipse 13% 16% at 90% 19%,#000 48%,transparent 100%);pointer-events:none}
+/* Reduce the requested menu cutouts while keeping a consistent centered scale. */
+.musakhan-card .product-viewer img,
+.iced-hibiscus-card .product-viewer img,
+.tuna-card .product-viewer img,
+.saudi-coffee-card .product-viewer img,
+.basbousa-cheese-card .product-viewer img,
+.tea-pot-set-card .product-viewer img,
+.zaatar-babka-card .product-viewer img,
+.chocolate-babka-card .product-viewer img{width:74%;height:74%;object-fit:contain;object-position:center}
+.menu-category-nav{display:flex;flex-wrap:wrap;gap:9px;margin:-8px 0 38px;direction:rtl}
+.menu-category-nav a{padding:8px 14px;border:1px solid #ffffff24;border-radius:24px;color:#d8c8c3;font-size:10px;transition:background .2s,color .2s,border-color .2s}
+.menu-category-nav a:hover{background:var(--gold);border-color:var(--gold);color:#201617}
+.menu-categories{display:flex;flex-direction:column;gap:54px}
+.menu-category{scroll-margin-top:92px}
+.menu-category-title{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--gold);font-size:24px;font-weight:500}
+.menu-category-title:after{content:"";height:1px;flex:1;background:linear-gradient(to left,#d8b57548,transparent)}
+.menu-category .category-grid{margin:0}
+.lemonas-card .product-viewer img,.tea-steeping-card .product-viewer img{width:74%;height:74%;object-fit:contain;object-position:center}
+.chocolate-babka-card .product-viewer img{width:56%;height:56%;object-fit:contain;object-position:center}
+@media(max-width:650px){.menu-category-nav{gap:7px;margin-bottom:30px}.menu-category-nav a{padding:7px 11px;font-size:9px}.menu-categories{gap:40px}.menu-category-title{font-size:21px;margin-bottom:16px}}
+.item-prices{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;direction:rtl}
+.price-option{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #d8b57538;border-radius:18px;background:#d8b5750b;color:#d1c5c2;font-size:9px;white-space:nowrap}
+.price-option b{color:var(--gold);font-size:10px;font-weight:600}
+.availability-note,.free-water-note{text-align:center;margin:14px 0 0;color:#b9abad;font-size:10px;line-height:1.8}
+.free-water-note{margin-top:8px;color:var(--gold);font-weight:600}
