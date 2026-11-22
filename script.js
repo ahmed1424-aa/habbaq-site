@@ -22,7 +22,7 @@ if (originalMenuGrid) {
     { id: 'babka', title: 'البابكا', cards: ['.zaatar-babka-card', '.chocolate-babka-card'] },
     { id: 'tea', title: 'الشاي', cards: ['.tea-pot-set-card', '.tea-card', '.tea-steeping-card'] },
     { id: 'winter-drinks', title: 'مشروبات شتوية', cards: ['.karak-card', '.lemonas-card'] },
-    { id: 'saudi-coffee', title: 'قهوة سعودية', cards: ['.saudi-coffee-card', '.dallah-hospitality-card'] },
+    { id: 'saudi-coffee', title: 'قهوة سعودية', cards: ['.saudi-coffee-card', '.coffee-of-the-day-card', '.dallah-hospitality-card'] },
     { id: 'iced', title: 'ايس', cards: ['.iced-tea-card', '.iced-hibiscus-card'] },
     { id: 'focaccia', title: 'الفوكاشيا', cards: ['.tuna-card', '.food-card'] },
     { id: 'nuts', title: 'مكسرات', cards: ['.smoked-nuts-card', '.japanese-nuts-card'] }
@@ -97,6 +97,7 @@ const menuPrices = [
   ['.japanese-nuts-card', [['السعر', '6 ر.س']]],
   ['.maamoul-card', [['6 حبات', '9 ر.س'], ['بوكس 18 حبة', '25 ر.س']]],
   ['.saudi-coffee-card', [['السعر', '7 ر.س']]],
+  ['.coffee-of-the-day-card', [['بارد', '8 ر.س'], ['حار', '8 ر.س']]],
   ['.food-card', [['السعر', '16 ر.س']]],
   ['.tuna-card', [['السعر', '14 ر.س']]]
 ];
