@@ -190,3 +190,7 @@ footer .leaf{font-size:20px}
 /* Keep today's coffee cutout transparent and scaled to match neighboring cup products. */
 .coffee-of-the-day-card .product-viewer img{width:48%;height:68%;object-fit:contain;object-position:center}
 @media(max-width:650px){.coffee-of-the-day-card .product-viewer img{width:58%;height:72%}}
+
+/* Match the visible cup height to the tea steeping cup on the cropped transparent image. */
+.coffee-of-the-day-card .product-viewer img{width:39%;height:54%;object-fit:contain;object-position:center}
+@media(max-width:650px){.coffee-of-the-day-card .product-viewer img{width:44%;height:56%}}
